@@ -39,6 +39,7 @@ public class ConwayFrame extends JFrame {
                 startGame();
                 next.setEnabled(false);
                 clear.setEnabled(false);
+                run.setEnabled(false);
 
             }
 
@@ -51,6 +52,7 @@ public class ConwayFrame extends JFrame {
                 stopGame();
                 next.setEnabled(true);
                 clear.setEnabled(true);
+                run.setEnabled(true);
 
             }
 
