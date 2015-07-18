@@ -5,8 +5,8 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
-import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
+import java.awt.geom.Rectangle2D;
 import java.util.Arrays;
 
 /**
@@ -48,18 +48,8 @@ public class GameComponent extends JPanel {
 
         Graphics2D g2 = (Graphics2D) g;
         g2.setStroke(new BasicStroke(STROKE));
-        g2.setPaint(Color.LIGHT_GRAY);
 
-        for (int j = LINE_SPACING; j <= DEFAULT_WIDTH - LINE_SPACING; j += LINE_SPACING) {
-            Line2D line = new Line2D.Double(j, LINE_SPACING, j, DEFAULT_HEIGHT - LINE_SPACING);
-            g2.draw(line);
-        }
-
-        for (int j = LINE_SPACING; j <= DEFAULT_HEIGHT - LINE_SPACING; j += LINE_SPACING) {
-            Line2D line = new Line2D.Double(LINE_SPACING, j, DEFAULT_WIDTH - LINE_SPACING, j);
-            g2.draw(line);
-        }
-        g2.setPaint(Color.DARK_GRAY);
+        g2.setPaint(Color.BLUE);
 
         for (int i = 0; i < row; i++) {
 
@@ -70,10 +60,22 @@ public class GameComponent extends JPanel {
                     int baseY = (i + 1) * LINE_SPACING;
                     int baseX = (j + 1) * LINE_SPACING;
 
-                    g2.fill(new Ellipse2D.Double(baseX, baseY, LINE_SPACING + STROKE, LINE_SPACING + STROKE));
+                    g2.fill(new Rectangle2D.Double(baseX, baseY, LINE_SPACING + STROKE, LINE_SPACING + STROKE));
 
                 }
             }
+        }
+
+        g2.setPaint(Color.LIGHT_GRAY);
+
+        for (int j = LINE_SPACING; j <= DEFAULT_WIDTH - LINE_SPACING; j += LINE_SPACING) {
+            Line2D line = new Line2D.Double(j, LINE_SPACING, j, DEFAULT_HEIGHT - LINE_SPACING);
+            g2.draw(line);
+        }
+
+        for (int j = LINE_SPACING; j <= DEFAULT_HEIGHT - LINE_SPACING; j += LINE_SPACING) {
+            Line2D line = new Line2D.Double(LINE_SPACING, j, DEFAULT_WIDTH - LINE_SPACING, j);
+            g2.draw(line);
         }
 
     }
