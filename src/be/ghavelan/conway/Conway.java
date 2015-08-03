@@ -15,7 +15,7 @@ public class Conway {
             public void run() {
 
                 JFrame frame = new ConwayFrame();
-                frame.setTitle("Conway game of life");
+                frame.setTitle("Conway's game of life");
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
