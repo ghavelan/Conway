@@ -16,7 +16,7 @@ public class GameComponent extends JPanel {
 
     private static final int DEFAULT_WIDTH = 1000;
     private static final int DEFAULT_HEIGHT = 600;
-    private static final int LINE_SPACING = 10;
+    private static final int LINE_SPACING = 5;
     private static final int STROKE = 1;
 
     private int row;
